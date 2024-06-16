@@ -1,21 +1,17 @@
 name: push
-
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
     paths:
       - 'creds.json'
       - 'dnsconfig.js'
-
 jobs:
   push:
     runs-on: ubuntu-latest
     container:
       image: ttkzw/dnscontrol
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: dnscontrol push
         run: dnscontrol push
         env:

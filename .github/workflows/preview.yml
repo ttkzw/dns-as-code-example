@@ -1,21 +1,17 @@
 name: preview
-
 on:
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
     paths:
       - 'creds.json'
       - 'dnsconfig.js'
-
 jobs:
   preview:
     runs-on: ubuntu-latest
     container:
       image: ttkzw/dnscontrol
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: dnscontrol preview
         run: dnscontrol preview
         env:
