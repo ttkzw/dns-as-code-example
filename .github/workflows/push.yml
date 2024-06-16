@@ -1,10 +1,8 @@
 name: push
 on:
   push:
-    branches: [ "main" ]
-    paths:
-      - 'creds.json'
-      - 'dnsconfig.js'
+    branches: [ 'main' ]
+    paths: [ 'creds.json', 'dnsconfig.js' ]
 jobs:
   push:
     runs-on: ubuntu-latest
