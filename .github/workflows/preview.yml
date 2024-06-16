@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - creds.json
-      - dnsconfig.js
+      - 'creds.json'
+      - 'dnsconfig.js'
 
 jobs:
   preview:
