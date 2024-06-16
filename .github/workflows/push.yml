@@ -1,0 +1,21 @@
+name: push
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - creds.json
+      - dnsconfig.js
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    container:
+      image: ttkzw/dnscontrol
+    steps:
+      - name: dnscontrol push
+        run: dnscontrol push
+        env:
+          SAKURACLOUD_ACCESS_TOKEN: ${{ secrets.SAKURACLOUD_ACCESS_TOKEN }}
+          SAKURACLOUD_ACCESS_TOKEN_SECRET: ${{ secrets.SAKURACLOUD_ACCESS_TOKEN_SECRET }}

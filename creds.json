@@ -1,0 +1,7 @@
+{
+  "sakuracloud": {
+    "TYPE": "SAKURACLOUD",
+    "access_token": "$SAKURACLOUD_ACCESS_TOKEN",
+    "access_token_secret": "$SAKURACLOUD_ACCESS_TOKEN_SECRET"
+  }
+}
